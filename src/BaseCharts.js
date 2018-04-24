@@ -1,6 +1,6 @@
-import Chart from 'chart.js'
+var Chart = require('chart.js')
 
-export function generateChart (chartId, chartType) {
+export function generateChart () {
   return {
     render: function (createElement) {
       return createElement(
@@ -12,7 +12,6 @@ export function generateChart (chartId, chartType) {
           createElement(
             'canvas', {
               attrs: {
-                id: this.chartId,
                 width: this.width,
                 height: this.height
               },
@@ -24,10 +23,6 @@ export function generateChart (chartId, chartType) {
     },
 
     props: {
-      chartId: {
-        default: chartId,
-        type: String
-      },
       width: {
         default: 400,
         type: Number
@@ -50,14 +45,12 @@ export function generateChart (chartId, chartType) {
         }
       }
     },
-
     data () {
       return {
         _chart: null,
         _plugins: this.plugins
       }
     },
-
     methods: {
       addPlugin (plugin) {
         this.$data._plugins.push(plugin)
@@ -65,7 +58,7 @@ export function generateChart (chartId, chartType) {
       renderChart (data, options) {
         this.$data._chart = new Chart(
           this.$refs.canvas.getContext('2d'), {
-            type: chartType,
+            type: this.chartType,
             data: data,
             options: options,
             plugins: this.$data._plugins
@@ -80,25 +73,8 @@ export function generateChart (chartId, chartType) {
     }
   }
 }
-
-export const Bar = generateChart('bar-chart', 'bar')
-export const HorizontalBar = generateChart('horizontalbar-chart', 'horizontalBar')
-export const Doughnut = generateChart('doughnut-chart', 'doughnut')
-export const Line = generateChart('line-chart', 'line')
-export const Pie = generateChart('pie-chart', 'pie')
-export const PolarArea = generateChart('polar-chart', 'polarArea')
-export const Radar = generateChart('radar-chart', 'radar')
-export const Bubble = generateChart('bubble-chart', 'bubble')
-export const Scatter = generateChart('scatter-chart', 'scatter')
+export const BaseChart = generateChart()
 
 export default {
-  Bar,
-  HorizontalBar,
-  Doughnut,
-  Line,
-  Pie,
-  PolarArea,
-  Radar,
-  Bubble,
-  Scatter
+  BaseChart
 }

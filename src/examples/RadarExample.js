@@ -1,7 +1,12 @@
-import { Radar } from '../BaseCharts'
+import { BaseChart } from '../BaseCharts'
 
 export default {
-  extends: Radar,
+  extends: BaseChart,
+  data () {
+    return {
+      chartType: 'radar'
+    }
+  },
   mounted () {
     this.renderChart({
       labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],

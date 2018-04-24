@@ -1,7 +1,12 @@
-import { Scatter } from '../BaseCharts'
+import { BaseChart } from '../BaseCharts'
 
 export default {
-  extends: Scatter,
+  extends: BaseChart,
+  data () {
+    return {
+      chartType: 'scatter'
+    }
+  },
   mounted () {
     this.renderChart({
       datasets: [{

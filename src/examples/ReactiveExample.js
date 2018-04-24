@@ -1,15 +1,16 @@
-import { Bar } from '../BaseCharts'
+import { BaseChart } from '../BaseCharts'
 import { reactiveData } from '../mixins'
 
 export default {
-  extends: Bar,
+  extends: BaseChart,
   mixins: [reactiveData],
   data: () => ({
     chartData: '',
     options: {
       responsive: true,
       maintainAspectRatio: false
-    }
+    },
+    chartType: 'bar'
   }),
   created () {
     this.fillData()

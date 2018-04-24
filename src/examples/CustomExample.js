@@ -26,10 +26,15 @@ Chart.controllers.LineWithLine = Chart.controllers.line.extend({
   }
 })
 
-const LineWithLine = generateChart('line-with-chart', 'LineWithLine')
+const LineWithLine = generateChart()
 
 export default {
   extends: LineWithLine,
+  data () {
+    return {
+      chartType: 'LineWithLine'
+    }
+  },
   mounted () {
     this.renderChart({
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],

@@ -17,12 +17,12 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    'vue-chartjs': './src/index.js'
+    'AsmVueChart': './src/index.js'
   },
   devtool: 'source-map',
   output: {
     filename: './dist/[name].js',
-    library: 'VueChartJs',
+    library: 'AsmVueChart',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

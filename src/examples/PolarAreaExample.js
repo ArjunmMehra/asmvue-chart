@@ -1,7 +1,12 @@
-import { PolarArea } from '../BaseCharts'
+import { BaseChart } from '../BaseCharts'
 
 export default {
-  extends: PolarArea,
+  extends: BaseChart,
+  data () {
+    return {
+      chartType: 'polarArea'
+    }
+  },
   mounted () {
     this.renderChart({
       labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
@@ -25,6 +30,6 @@ export default {
           data: [28, 48, 40, 19, 96, 27, 100]
         }
       ]
-    }, {responsive: true, maintainAspectRatio: false})
+    }, {responsive: true, maintainAspectRatio: false}, 'polarArea')
   }
 }

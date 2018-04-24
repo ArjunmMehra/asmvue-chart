@@ -1,7 +1,12 @@
-import { Doughnut } from '../BaseCharts'
+import { BaseChart } from '../BaseCharts'
 
 export default {
-  extends: Doughnut,
+  extends: BaseChart,
+  data () {
+    return {
+      chartType: 'doughnut'
+    }
+  },
   mounted () {
     this.renderChart({
       labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],

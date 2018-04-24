@@ -1,0 +1,24 @@
+.DS_Store
+.thumbs.db
+node_modules
+/src-cordova/platforms
+/src-cordova/plugins
+/src-cordova/www
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+npm-debug.log
+selenium-debug.log
+test/unit/coverage
+test/e2e/reports
+es/
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+

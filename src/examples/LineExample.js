@@ -1,9 +1,15 @@
-import { Line } from '../BaseCharts'
+import { BaseChart } from '../BaseCharts'
 
 export default {
-  extends: Line,
+  extends: BaseChart,
+  data () {
+    return {
+      chartType: 'line'
+    }
+  },
   mounted () {
     this.renderChart({
+      type: 'line',
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
         {

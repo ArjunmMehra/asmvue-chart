@@ -1,7 +1,12 @@
-import { Bubble } from '../BaseCharts'
+import { BaseChart } from '../BaseCharts'
 
 export default {
-  extends: Bubble,
+  extends: BaseChart,
+  data () {
+    return {
+      chartType: 'bubble'
+    }
+  },
   mounted () {
     this.renderChart({
       datasets: [
