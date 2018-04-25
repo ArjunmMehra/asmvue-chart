@@ -175,10 +175,14 @@ var reactiveProp = {
   props: {
     chartData: {
       required: true
+    },
+    chartType: {
+      required: true
     }
   },
   watch: {
-    'chartData': dataHandler
+    'chartData': dataHandler,
+    'chartType': dataHandler
   }
 };
 /* harmony default export */ __webpack_exports__["a"] = ({

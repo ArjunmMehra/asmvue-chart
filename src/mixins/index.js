@@ -80,10 +80,14 @@ export const reactiveProp = {
   props: {
     chartData: {
       required: true
+    },
+    chartType: {
+      required: true
     }
   },
   watch: {
-    'chartData': dataHandler
+    'chartData': dataHandler,
+    'chartType': dataHandler
   }
 }
 
